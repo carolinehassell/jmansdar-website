@@ -2,8 +2,8 @@ html {
     font-size: 1em;
     scroll-behavior: smooth;
     font-family: 'Roboto', sans-serif;
-    --mdc-theme-primary: #82ccdd;
-    --mdc-theme-on-primary: black;
+    --mdc-theme-primary: #458AC3;
+    --mdc-theme-on-primary: white;
 }
 
 body {

@@ -7,20 +7,20 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
-    articletest: './src/js/entrypoints/articletest.js',
+    article: './src/js/entrypoints/article.js',
     index: './src/js/entrypoints/index.js'
   },
   optimization: {
     splitChunks: {
       chunks: 'all',
-      cacheGroups: { // split css
+      /*cacheGroups: { // split css
         styles: {
           name: 'styles',
           test: /\.css$/,
           chunks: 'all',
           enforce: true,
         },
-      },
+      },*/
  
     }
   },
@@ -45,11 +45,11 @@ module.exports = {
         from: "./node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js",
         to: "./assets/js/webcomponents_polyfills/"
       },
-      //COPY ALL THE HTML FILES 
-      /*{
-        from: "./src/html",
-        to: "./"
-      },*/
+      //COPY ALL THE MEDIA FILES 
+      {
+        from: "./src/media",
+        to: "./media"
+      },
     ]),
     /** GENERATE PAGES  COPY ONE OF THE "new HtmlWebpackPlugin" object classes and edit it to add a new page*/
     new HtmlWebpackPlugin({  // Create home file
@@ -60,7 +60,7 @@ module.exports = {
     new HtmlWebpackPlugin({  // CREATE ARTICLE FILE
       filename: 'articletest.html',
       template: 'src/html/articletest.html',
-      chunks: ['articletest']
+      chunks: ['article']
     })
   ],
   module: {

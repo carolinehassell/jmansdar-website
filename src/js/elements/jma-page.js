@@ -9,7 +9,7 @@ import "@material/mwc-icon-button";
 import '@material/mwc-list/mwc-list.js';
 import '@material/mwc-list/mwc-list-item.js';
 
-  export class JMAMasthead extends LitElement {
+  export class JMAPage extends LitElement {
 
     static get styles() {
         return css`
@@ -72,24 +72,25 @@ import '@material/mwc-list/mwc-list-item.js';
     render(){
 
       return html`
-        <mwc-drawer hasHeader type="modal" id="mwc-drawer" >
+        <mwc-drawer hasHeader type="modal" id="mwc-drawer">
             <span slot="title">John McKnitt Alexander</span>
             <span slot="subtitle">NSDAR - Houston, TX</span>
             <!-- Add links under here For the side drawer-->
             <mwc-list>
                 <!--Home-->
-                <a href="../"><mwc-list-item class="drawer-link">Home</mwc-list-item></a>
-
+                <a href="./"><mwc-list-item class="drawer-link">Home</mwc-list-item></a>
+                <a href="./articletest.html"><mwc-list-item class="drawer-link">Article Test</mwc-list-item></a>
             </mwc-list>
             
 
-            <div slot="appContent">
+            <div id="appContent" slot="appContent">
                 <mwc-top-app-bar-fixed>
                     <mwc-icon-button class="drawer-icon" id="open-drawer" slot="navigationIcon" icon="menu"></mwc-icon-button>
 
                     <div id="masthead-title" slot="title">John McKnitt Alexander, NSDAR</div>
 
                     <a href="./" slot="actionItems"><mwc-button class="drawer-link" label="Home"></mwc-button></a>
+                    <a href="./articletest.html" slot="actionItems"><mwc-button class="drawer-link" label="Article Test"></mwc-button></a>
                 </mwc-top-app-bar-fixed>
                 <slot></slot>
 
@@ -101,5 +102,5 @@ import '@material/mwc-list/mwc-list-item.js';
     }
   }
 
-  customElements.define('jma-masthead', JMAMasthead);
+  customElements.define('jma-page', JMAPage);
 
